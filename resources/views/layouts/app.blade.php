@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -8,24 +8,28 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'WE199bbs')</title>
+    <title>@yield('title', 'we199BBS') - 我们的论坛</title>
 
-    <!-- Style -->
+    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
-    <div id="app" class="{{ route_class() }}-page">
-        @include('layouts._header')
+<div id="app" class="{{ route_class() }}-page">
 
-        <div class="contariner">
-            @include('layouts._message')
-            @yield('content')
-        </div>
+    @include('layouts._header')
 
-        @include('layouts._footer')
+    <div class="container">
+
+        @include('layouts._message')
+        @yield('content')
+
     </div>
 
+    @include('layouts._footer')
+</div>
+
 <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
