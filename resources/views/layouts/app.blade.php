@@ -18,6 +18,7 @@
         @include('layouts._header')
 
         <div class="contariner">
+            @include('layouts._message')
             @yield('content')
         </div>
 
