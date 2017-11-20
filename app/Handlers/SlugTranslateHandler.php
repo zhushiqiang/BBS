@@ -33,7 +33,8 @@ class SlugTranslateHandler
             "sign"  => $sign,
         ]);
         // 发送 HTTP Get 请求
-        $result = $http->get($api.$query);
+        $response = $http->get($api.$query);
+        $result = json_decode($response->getBody(), true);
         // 尝试获取获取翻译结果
         if (isset($result['trans_result'][0]['dst'])) {
             return str_slug($result['trans_result'][0]['dst']);
